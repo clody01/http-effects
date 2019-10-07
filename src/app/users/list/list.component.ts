@@ -26,8 +26,8 @@ export class ListComponent implements OnInit, OnDestroy {
     this.userSubscription = this.store.select('users').subscribe(usersAction => {
       this.users = usersAction.users;
       this.loading = usersAction.loading;
-      this.error = usersAction.error;
-    })
+    this.error = usersAction.error;
+  })
   }
 
   ngOnDestroy(): void {
