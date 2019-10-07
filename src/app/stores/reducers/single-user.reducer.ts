@@ -20,10 +20,9 @@ export function oneUserReducers(state = initState, action: fromOneUser.oneUserAc
     case fromOneUser.LOAD_ONE_USER:
       return {
         ...state,
-        loading: true,
-        error: null
+        loading: true
       };
-    case fromOneUser.LOAD_ONE_USER_SUCCESS:
+    case fromOneUser.LOAD_ONE_USER_SUCCESS :
       return {
         ...state,
         loading: false,
