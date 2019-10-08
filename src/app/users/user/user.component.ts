@@ -23,15 +23,15 @@ export class UserComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.userIdSubscription = this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe(params => {
       const userId = params['id'];
       this.store.dispatch(new fromUserActions.LoadOneUser(userId));
     });
-    this.userSubscription = this.store.select("user").subscribe(userAction => {
+     this.store.select("user").subscribe(userAction => {
       this.user = userAction.user;
       this.loading = userAction.loading;
       this.error = userAction.error;
-    })
+    });
   }
 
   ngOnDestroy(): void {
